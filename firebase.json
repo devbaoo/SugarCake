@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "sugar-silk-cake-2025",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
