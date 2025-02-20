@@ -6,19 +6,19 @@ const slidesData = [
 		title: "Friday Sale",
 		subtitle: "Buy anything and get 30% OFF",
 		buttonText: "Buy Now",
-		image: "public/images/anh1.jpg",
+		image: "/images/anh1.jpg",
 	},
 	{
 		title: "Holyday Special",
 		subtitle: "Click Below to get Holyday Special Deal",
 		buttonText: "Buy Now",
-		image: "public/images/banner.jpg",
+		image: "/images/banner.jpg",
 	},
 	{
 		title: "Weekend Sale",
 		subtitle: "Get 20% Extra Discount on every Weekend",
 		buttonText: "Shop Now",
-		image: "public/images/banh.jpg",
+		image: "/images/banh.jpg",
 	},
 ];
 

@@ -1,4 +1,3 @@
-import React from "react";
 import MetaTitle from "../components/MetaTitle";
 
 const About = () => {
@@ -10,7 +9,7 @@ const About = () => {
 					<div className='about-content'>
 						<div className='about-image-container'>
 							<img
-								src='public/images/quality_restoration_20250210111322142.jpg'
+								src='/images/quality_restoration_20250210111322142.jpg'
 								alt='About Us'
 								className='about-image'
 							/>
