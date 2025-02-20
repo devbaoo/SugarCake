@@ -24,21 +24,21 @@ const Home = () => {
 			<div className='home-container'>
 				<Carousel />
 				<div style={{ display: "flex", justifyContent: "center", marginBottom: '30px' }}>
-					<img className="flex justify-center" src='dist/images/sugar.png' alt='' />
+					<img className="flex justify-center" src='public/images/sugar.png' alt='' />
 				</div>
 				<FlashDeals />
 				<div className='mini-banner-section'>
 					<div className='mini-banners container'>
 						<img
-							src='dist/images/quality_restoration_20250210111142533.jpg'
+							src='public/images/quality_restoration_20250210111142533.jpg'
 							alt='product banners'
 						/>
 						<img
-							src='dist/images/quality_restoration_20250210111234772.jpg'
+							src='public/images/quality_restoration_20250210111234772.jpg'
 							alt='product banners'
 						/>
 						<img
-							src='dist/images/quality_restoration_20250210111322142.jpg'
+							src='public/images/quality_restoration_20250210111322142.jpg'
 							alt='product banners'
 						/>
 					</div>

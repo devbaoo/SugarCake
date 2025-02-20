@@ -10,7 +10,7 @@ const About = () => {
 					<div className='about-content'>
 						<div className='about-image-container'>
 							<img
-								src='dist/images/quality_restoration_20250210111322142.jpg'
+								src='public/images/quality_restoration_20250210111322142.jpg'
 								alt='About Us'
 								className='about-image'
 							/>
