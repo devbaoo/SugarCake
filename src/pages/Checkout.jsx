@@ -256,7 +256,7 @@ const Checkout = () => {
                             Sản phẩm :
                           </td>
                           {cartProducts &&
-                            cartProducts?.map((item, index) => {
+                            cartProducts.map((item, index) => {
                               return (
                                 <td
                                   className="checkout-products-title"
@@ -278,15 +278,30 @@ const Checkout = () => {
                         </tr>
                         <tr>
                           <td>Tạm tính</td>
-                          <td>{`$ ${cartSubTotal}`}</td>
+                          <td>
+                            {Number(cartSubTotal).toLocaleString("vi-VN", {
+                              style: "currency",
+                              currency: "VND",
+                            })}
+                          </td>
                         </tr>
                         <tr>
                           <td>Phí vận chuyển</td>
-                          <td>{`$ ${shippingCharge}`}</td>
+                          <td>
+                            {Number(shippingCharge).toLocaleString("vi-VN", {
+                              style: "currency",
+                              currency: "VND",
+                            })}
+                          </td>
                         </tr>
                         <tr className="total-ammount">
                           <td>Số tiền đơn hàng</td>
-                          <td>{`$ ${orderAmount}`}</td>
+                          <td>
+                            {Number(orderAmount).toLocaleString("vi-VN", {
+                              style: "currency",
+                              currency: "VND",
+                            })}
+                          </td>
                         </tr>
                       </tbody>
                     </table>

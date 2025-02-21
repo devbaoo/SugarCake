@@ -99,7 +99,12 @@ export default function Component() {
                             </div>
                           </div>
                         </td>
-                        <td className="cart-product-price">{`$${item?.price}`}</td>
+                        <td className="cart-product-price">
+                          {Number(item?.price).toLocaleString("vi-VN", {
+                            style: "currency",
+                            currency: "VND",
+                          })}
+                        </td>
                         <td className="cart-product-quantity">
                           <div className="quantity-wrapper">
                             <button
@@ -142,10 +147,13 @@ export default function Component() {
                           </div>
                         </td>
                         <td className="product-total">
-                          {`$${
+                          {Number(
                             item?.price *
-                            (cartProductDetails[item._id] || item.quantity)
-                          }`}
+                              (cartProductDetails[item._id] || item.quantity)
+                          ).toLocaleString("vi-VN", {
+                            style: "currency",
+                            currency: "VND",
+                          })}
                         </td>
                         <td className="remove-cart-btn">
                           <RxCross2
@@ -172,7 +180,12 @@ export default function Component() {
                   <div className="summary-item">
                     <p className="total-label">Tổng giỏ hàng</p>
                     <div className="total-content">
-                      <p className="total-value">{`$ ${cartSubTotal}`}</p>
+                      <p className="total-value">
+                        {Number(cartSubTotal).toLocaleString("vi-VN", {
+                          style: "currency",
+                          currency: "VND",
+                        })}
+                      </p>
                       <p className="total-info">
                         (đã bao gồm tất cả các loại thuế)
                       </p>
