@@ -55,7 +55,11 @@ const Wishlist = () => {
                   </Link>
                 </div>
                 <div className="price">
-                  <span>Giá:</span> {`$${items?.price}`}
+                  <span>Giá:</span>{" "}
+                  {Number(items?.price).toLocaleString("vi-VN", {
+                    style: "currency",
+                    currency: "VND",
+                  })}
                 </div>
               </div>
             );
