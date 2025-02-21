@@ -88,31 +88,33 @@ const Checkout = () => {
 
   const checkoutHandler = async () => {
     if (!paymentMethod) {
-      alert("Vui lòng chọn phương thức thanh toán");
-      return;
+        alert("Vui lòng chọn phương thức thanh toán");
+        return;
     }
 
-    if (paymentMethod === "cod") {
-      // Handle Cash On Delivery
+    const orderData = {
+        totalPrice: orderAmount,
+        priceAfterDiscount: orderAmount,
+        orderItems: cartProductState,
+        paymentInfo: {
+            payosOrderId: `TEMP_${Date.now()}`,
+            payosPaymentId: "PENDING",
+        },
+        shippingInfo: formik.values,
+        paymentMethod: paymentMethod, // Add payment method to order data
+    };
 
-      dispatch(
-        createOrder({
-          totalPrice: orderAmount,
-          priceAfterDiscount: orderAmount,
-          orderItems: cartProductState,
-          paymentInfo: {
-            razorpayPaymentId: "Cash On Delivery",
-            razorpayOrderId: "Cash On Delivery",
-          },
-          shippingInfo: formik.values,
-        })
-      );
-      dispatch(emptyCart());
-      setTimeout(() => {
-        navigate("/my-orders");
-      }, 800);
-    }
-  };
+    dispatch(createOrder(orderData)).then((result) => {
+        if (result.payload?.success) {
+            dispatch(emptyCart());
+            if (paymentMethod === "bank" && result.payload?.paymentData?.paymentUrl) {
+                window.location.href = result.payload.paymentData.paymentUrl;
+            } else {
+                navigate("/my-orders");
+            }
+        }
+    });
+};
   return (
     <>
       <MetaTitle title={"Order Cart Products"} />
@@ -308,16 +310,30 @@ const Checkout = () => {
 
                     <br />
                     <div>
-                      <input
-                        type="radio"
-                        name="paymentMethod"
-                        value="cod"
-                        onChange={() => setPaymentMethod("cod")}
-                        checked={paymentMethod === "cod"}
-                      />{" "}
-                      Thanh toán khi giao hàng
-                    </div>
-                    <p>Thanh toán khi nhận hàng cũng có sẵn.</p>
+        <input
+            type="radio"
+            name="paymentMethod"
+            value="cod"
+            onChange={() => setPaymentMethod("cod")}
+            checked={paymentMethod === "cod"}
+        />{" "}
+        Thanh toán khi giao hàng
+    </div>
+    <div>
+        <input
+            type="radio"
+            name="paymentMethod"
+            value="bank"
+            onChange={() => setPaymentMethod("bank")}
+            checked={paymentMethod === "bank"}
+        />{" "}
+        Thanh toán qua ngân hàng
+    </div>
+    <p>
+        {paymentMethod === "cod" 
+            ? "Thanh toán khi nhận hàng cũng có sẵn."
+            : "Chuyển hướng đến cổng thanh toán an toàn."}
+    </p>
                   </div>
                 </div>
                 <div className="checkout-button">
