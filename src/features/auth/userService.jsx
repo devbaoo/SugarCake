@@ -105,7 +105,8 @@ const createOrder = async (orderData) => {
                 'https://shark-app-lohcb.ondigitalocean.app/api/payment/order/checkout',
                 { 
                     orderId: response.data.order._id,
-                    returnUrl: `${window.location.origin}/success` // Thêm returnUrl
+                    returnUrl: `${window.location.origin}/success`,
+                    cancelUrl: `${window.location.origin}/cancel`
                 },
                 config
             );
