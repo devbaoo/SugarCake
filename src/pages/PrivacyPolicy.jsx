@@ -2,32 +2,30 @@ import React from "react";
 import MetaTitle from "../components/MetaTitle";
 
 const PrivacyPolicy = () => {
-	return (
-		<>
-			<MetaTitle title={"Our Privacy and Policies"} />
-			<div className='policy-container'>
-				<div className='container'>
-					<h1 className='shipping-heading'>Privacy Policy</h1>
-					<div className='shipping-polity-details'>
-						{/* <h2>What is Sugar Cake Terms and Conditions?</h2> */}
-						<ul>
-							Last updated: May 5, 2024 <br />
-							<br />
-							This Privacy Policy describes Our policies and
-							procedures on the collection, use and disclosure of
-							Your information when You use the Service and tells
-							You about Your privacy rights and how the law
-							protects You. <br />
-							<br /> We use Your Personal data to provide and
-							improve the Service. By using the Service, You agree
-							to the collection and use of information in
-							accordance with this Privacy Policy.
-						</ul>
-					</div>
-				</div>
-			</div>
-		</>
-	);
+  return (
+    <>
+      <MetaTitle title={"Chính sách bảo mật của chúng tôi"} />
+      <div className="policy-container">
+        <div className="container">
+          <h1 className="shipping-heading">Chính sách bảo mật</h1>
+          <div className="shipping-polity-details">
+            <ul>
+              Cập nhật lần cuối: 5 tháng 5, 2024 <br />
+              <br />
+              Chính sách bảo mật này mô tả các chính sách và thủ tục của chúng
+              tôi về việc thu thập, sử dụng và tiết lộ thông tin của Quý vị khi
+              sử dụng Dịch vụ, cũng như thông tin về quyền riêng tư của Quý vị
+              và cách pháp luật bảo vệ Quý vị. <br />
+              <br />
+              Chúng tôi sử dụng dữ liệu cá nhân của Quý vị để cung cấp và cải
+              thiện Dịch vụ. Bằng cách sử dụng Dịch vụ, Quý vị đồng ý với việc
+              thu thập và sử dụng thông tin theo Chính sách bảo mật này.
+            </ul>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default PrivacyPolicy;

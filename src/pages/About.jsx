@@ -1,54 +1,50 @@
 import MetaTitle from "../components/MetaTitle";
 
 const About = () => {
-	return (
-		<>
-			<MetaTitle title={"About: Our Company"} />
-			<div className='about-container'>
-				<div className='container'>
-					<div className='about-content'>
-						<div className='about-image-container'>
-							<img
-								src='/images/quality_restoration_20250210111322142.jpg'
-								alt='About Us'
-								className='about-image'
-							/>
-						</div>
-						<div className='about-text-container'>
-							<span className='about-section-label'>
-								About us
-							</span>
-							<h2 className='about-section-heading'>
-								About{" "}
-								<span className='company-name'>
-									Our Company
-								</span>
-							</h2>
-							<p className='about-section-description'>
-								We (Sugar Cake) are providing good quality
-								products in low price. Here you can buy quality
-								products in low price. You can buy anything from
-								our App and Website.
-								<br />
-								<br />
-								We have a good inventory of products ranging
-								from apparel to cosmetics to home utility and
-								kitchen products and more. With over 40 lakh
-								products and 300+ products categories, Sugar Cake
-								is sure to have everything you need. <br />{" "}
-								<br /> In our latest and New collections, you
-								will find all the popular & trending items at an
-								affordableprice, so you can be confident you're
-								in the market for new clothes, accessories, or
-								just some daily-use items for home, Sugar Cake has
-								everything you need.
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</>
-	);
+  return (
+    <>
+      <MetaTitle title={"Giới thiệu: Công ty của chúng tôi"} />
+      <div className="about-container">
+        <div className="container">
+          <div className="about-content">
+            <div className="about-image-container">
+              <img
+                src="/images/quality_restoration_20250210111322142.jpg"
+                alt="Giới thiệu về chúng tôi"
+                className="about-image"
+              />
+            </div>
+            <div className="about-text-container">
+              <span className="about-section-label">Về chúng tôi</span>
+              <h2 className="about-section-heading">
+                Giới thiệu{" "}
+                <span className="company-name">Công ty của chúng tôi</span>
+              </h2>
+              <p className="about-section-description">
+                Chúng tôi (Sugar Cake) cung cấp các sản phẩm chất lượng cao với
+                giá cả phải chăng. Tại đây, bạn có thể mua các sản phẩm chất
+                lượng với mức giá ưu đãi. Bạn có thể mua bất cứ thứ gì từ Ứng
+                dụng và Website của chúng tôi.
+                <br />
+                <br />
+                Chúng tôi có kho hàng phong phú với các sản phẩm từ thời trang,
+                mỹ phẩm, đến đồ gia dụng và sản phẩm cho nhà bếp, và nhiều hơn
+                nữa. Với hơn 4 triệu sản phẩm và trên 300 danh mục, Sugar Cake
+                chắc chắn có mọi thứ bạn cần.
+                <br />
+                <br />
+                Trong bộ sưu tập mới nhất của chúng tôi, bạn sẽ tìm thấy tất cả
+                các mặt hàng phổ biến và xu hướng với mức giá phải chăng, giúp
+                bạn tự tin khi tìm kiếm quần áo mới, phụ kiện, hay đơn giản là
+                một số mặt hàng hàng ngày cho gia đình. Sugar Cake có tất cả
+                những gì bạn cần.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default About;
