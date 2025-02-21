@@ -92,17 +92,31 @@ const updateCartQty = async (updatedData) => {
 	}
 };
 const createOrder = async (orderData) => {
-	try {
-		const response = await axios.post(
-			`${base_url}user/cart/create-order`,
-			orderData,
-			config
-		);
-		return response.data;
-	} catch (error) {
-		console.error("Error in creating Order:", error);
-		throw error;
-	}
+    try {
+        const response = await axios.post(
+            `${base_url}user/cart/create-order`,
+            orderData,
+            config
+        );
+        
+        if (response.data.success && orderData.paymentMethod === "bank") {
+            // Call Payos payment API with the order ID
+            const paymentResponse = await axios.post(
+                'https://shark-app-lohcb.ondigitalocean.app/api/payment/order/checkout',
+                { 
+                    orderId: response.data.order._id,
+                    returnUrl: `${window.location.origin}/success` // Thêm returnUrl
+                },
+                config
+            );
+            return { ...response.data, paymentData: paymentResponse.data };
+        }
+        
+        return response.data;
+    } catch (error) {
+        console.error("Error in creating Order:", error);
+        throw error;
+    }
 };
 const getUserOrders = async () => {
 	try {

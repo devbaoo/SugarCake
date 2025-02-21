@@ -24,6 +24,7 @@ import Orders from "./pages/Orders";
 import ForgetPassword from "./pages/ForgetPassword";
 import ResetPassword from "./pages/ResetPassword";
 import VerifyMail from "./pages/VerifyMail";
+import PaymentSuccess from "./pages/PaymentSuccess";
 
 const AppRoutes = () => {
   return (
@@ -76,6 +77,7 @@ const AppRoutes = () => {
                 </ProtectedRoutes>
               }
             />
+            <Route path="/success" element={<PaymentSuccess />} />
             <Route
               path="/my-orders"
               element={
