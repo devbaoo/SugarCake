@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Body from "./pages/Body";
@@ -25,6 +26,7 @@ import ForgetPassword from "./pages/ForgetPassword";
 import ResetPassword from "./pages/ResetPassword";
 import VerifyMail from "./pages/VerifyMail";
 import PaymentSuccess from "./pages/paymentSuccess";
+import PaymentCancel from "./pages/paymentCancel";
 
 const AppRoutes = () => {
   return (
@@ -78,6 +80,7 @@ const AppRoutes = () => {
               }
             />
             <Route path="/success" element={<PaymentSuccess />} />
+            <Route path="/cancel" element={<PaymentCancel />} />
             <Route
               path="/my-orders"
               element={
