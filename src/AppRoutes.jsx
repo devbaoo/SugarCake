@@ -26,108 +26,93 @@ import ResetPassword from "./pages/ResetPassword";
 import VerifyMail from "./pages/VerifyMail";
 
 const AppRoutes = () => {
-	return (
-		<>
-			<BrowserRouter>
-				<Routes>
-					<Route path='/' element={<Body />}>
-						<Route index element={<Home />} />
-						<Route path='/shop' element={<Shop />} />
-						<Route
-							path='/product/:id'
-							element={<SingleProduct />}
-						/>
-						<Route path='/sale' element={<Sale />} />
-						<Route
-							path='/cart'
-							element={
-								<ProtectedRoutes>
-									<Cart />
-								</ProtectedRoutes>
-							}
-						/>
-						<Route
-							path='/profile'
-							element={
-								<ProtectedRoutes>
-									<Profile />
-								</ProtectedRoutes>
-							}
-						/>
-						<Route
-							path='/track-order/:id'
-							element={
-								<ProtectedRoutes>
-									<TrackOrder />
-								</ProtectedRoutes>
-							}
-						/>
-						<Route
-							path='/wishlist'
-							element={
-								<ProtectedRoutes>
-									<Wishlist />
-								</ProtectedRoutes>
-							}
-						/>
-						<Route path='/contact' element={<Contact />} />
-						<Route
-							path='/checkout'
-							element={
-								<ProtectedRoutes>
-									<Checkout />
-								</ProtectedRoutes>
-							}
-						/>
-						<Route
-							path='/my-orders'
-							element={
-								<ProtectedRoutes>
-									<Orders />
-								</ProtectedRoutes>
-							}
-						/>
-						<Route path='/faq' element={<Faq />} />
-						<Route
-							path='/shipping-policy'
-							element={<ShippingPolicy />}
-						/>
-						<Route
-							path='/privacy-policy'
-							element={<PrivacyPolicy />}
-						/>
-						<Route
-							path='/terms-conditions'
-							element={<TermsCondition />}
-						/>
-						<Route path='/about' element={<About />} />
-						<Route path='/sign-in' element={<Login />} />
-						<Route path='/verify/:id' element={<VerifyMail />} />
-						<Route
-							path='/reset-password/:token'
-							element={<ResetPassword />}
-						/>
-						<Route
-							path='/forget-password'
-							element={
-								<ProtectedRoutes>
-									<ForgetPassword />
-								</ProtectedRoutes>
-							}
-						/>
-						<Route
-							path='/sign-up'
-							element={
-								<OpenRoutes>
-									<SignUp />
-								</OpenRoutes>
-							}
-						/>
-					</Route>
-				</Routes>
-			</BrowserRouter>
-		</>
-	);
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Body />}>
+            <Route index element={<Home />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/product/:id" element={<SingleProduct />} />
+            <Route path="/sale" element={<Sale />} />
+            <Route
+              path="/cart"
+              element={
+                <ProtectedRoutes>
+                  <Cart />
+                </ProtectedRoutes>
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                <ProtectedRoutes>
+                  <Profile />
+                </ProtectedRoutes>
+              }
+            />
+            <Route
+              path="/track-order/:id"
+              element={
+                <ProtectedRoutes>
+                  <TrackOrder />
+                </ProtectedRoutes>
+              }
+            />
+            <Route
+              path="/wishlist"
+              element={
+                <ProtectedRoutes>
+                  <Wishlist />
+                </ProtectedRoutes>
+              }
+            />
+            <Route path="/contact" element={<Contact />} />
+            <Route
+              path="/checkout"
+              element={
+                <ProtectedRoutes>
+                  <Checkout />
+                </ProtectedRoutes>
+              }
+            />
+            <Route
+              path="/my-orders"
+              element={
+                <ProtectedRoutes>
+                  <Orders />
+                </ProtectedRoutes>
+              }
+            />
+            <Route path="/faq" element={<Faq />} />
+            <Route path="/shipping-policy" element={<ShippingPolicy />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-conditions" element={<TermsCondition />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/sign-in" element={<Login />} />
+            <Route path="/verify/:id" element={<VerifyMail />} />
+            <Route path="/reset-password/:token" element={<ResetPassword />} />
+            <Route
+              path="/forget-password"
+              element={
+                <ProtectedRoutes>
+                  <ForgetPassword />
+                </ProtectedRoutes>
+              }
+            />
+            <Route
+              path="/sign-up"
+              element={
+                <OpenRoutes>
+                  <SignUp />
+                </OpenRoutes>
+              }
+            />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
 };
 
 export default AppRoutes;
