@@ -63,7 +63,15 @@ const Orders = () => {
                             })}
                             <td>{new Date(item?.createdAt).toDateString()}</td>
                             <td>{item?.orderStatus}</td>
-                            <td>{`$${item?.totalPrice}`}</td>
+                            <td>
+                              {Number(item?.totalPrice).toLocaleString(
+                                "vi-VN",
+                                {
+                                  style: "currency",
+                                  currency: "VND",
+                                }
+                              )}
+                            </td>{" "}
                             <td className="view-order-btn">
                               <Link to={`/track-order/${item?._id}`}>
                                 <IoEyeSharp size={22} />

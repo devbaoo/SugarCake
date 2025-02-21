@@ -180,7 +180,12 @@ const SingleProduct = () => {
               <div className="product-details-row">
                 <div className="single-price">
                   <span className="single-label">Giá:</span>
-                  <span className="single-value">{`$${product?.price}`}</span>
+                  <span className="single-value">
+                    {Number(product?.price).toLocaleString("vi-VN", {
+                      style: "currency",
+                      currency: "VND",
+                    })}
+                  </span>
                 </div>
                 <div className="single-availability">
                   <span className="single-label">Tồn kho:</span>
