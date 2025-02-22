@@ -49,19 +49,15 @@ const SingleProduct = () => {
     }
   });
   const addProductToCart = () => {
-    if (color === null) {
-      toast.error("Please Choose Color");
-      return false;
-    } else {
-      dispatch(
-        addToCart({ productId, quantity, color, price: product?.price })
-      );
-      setTimeout(() => {
-        navigate("/cart");
-      }, 800);
-      dispatch(getCart());
-    }
+    dispatch(
+      addToCart({ productId, quantity, color, price: product?.price })
+    );
+    setTimeout(() => {
+      navigate("/cart");
+    }, 800);
+    dispatch(getCart());
   };
+  
 
   useEffect(() => {
     dispatch(getProducts());
