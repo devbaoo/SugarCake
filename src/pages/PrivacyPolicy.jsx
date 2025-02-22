@@ -10,7 +10,7 @@ const PrivacyPolicy = () => {
           <h1 className="shipping-heading">Chính sách bảo mật</h1>
           <div className="shipping-polity-details">
             <ul>
-              Cập nhật lần cuối: 5 tháng 5, 2024 <br />
+              Cập nhật lần cuối: 22 tháng 02, 2025<br />
               <br />
               Chính sách bảo mật này mô tả các chính sách và thủ tục của chúng
               tôi về việc thu thập, sử dụng và tiết lộ thông tin của Quý vị khi

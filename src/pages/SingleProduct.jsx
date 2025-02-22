@@ -140,7 +140,7 @@ const SingleProduct = () => {
                   <span className="single-value">{product?.brand}</span>
                 </div>
               </div>
-              {cartItem === false && (
+              {/* {cartItem === false && (
                 <div className="size-color">
                   <ul className="size-color-ul">
                     <p>Màu sắc:</p>
@@ -158,7 +158,7 @@ const SingleProduct = () => {
                     })}
                   </ul>
                 </div>
-              )}
+              )} */}
 
               {cartItem === false && (
                 <div className="single-product-options">
