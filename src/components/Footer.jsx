@@ -31,7 +31,7 @@ const Footer = () => {
             </div>
             <div className="l-footer-item">
               <FiMail />
-              <span>sugarsilkcake@gnail.com</span>
+              <span>sugarsilkcake@gmail.com</span>
             </div>
           </div>
           <div className="footer-middle">

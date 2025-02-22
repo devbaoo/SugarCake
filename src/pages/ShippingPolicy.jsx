@@ -9,21 +9,13 @@ const ShippingPolicy = () => {
         <div className="container">
           <h1 className="shipping-heading">Chính sách giao hàng</h1>
           <div className="shipping-polity-details">
-            <h2>Chính sách giao hàng của cửa hàng sugarsilkcake là gì?</h2>
+            <h2>Chính sách giao hàng của cửa hàng Sugar Silk Cake là gì?</h2>
             <ul>
               <li>
-                Chúng tôi cố gắng giao sản phẩm mua từ Ci Store với tình trạng
-                hoàn hảo và trong thời gian nhanh nhất có thể. Đơn hàng có giá
-                từ <b>INR 499 trở lên</b> sẽ không bị tính phí vận chuyển.
+              Chúng tôi sẽ cố gắng giao sản phẩm mua từ Sugar Silk Cake với tình trạng hoàn hảo và trong thời gian nhanh nhất có thể.
               </li>
               <li>
-                Chúng tôi cung cấp vận chuyển miễn phí cho đơn hàng có giá trị
-                từ <b>$499 trở lên</b>.
-              </li>
-              <li>
-                Thông thường, chúng tôi giao hàng trong vòng{" "}
-                <b>2-7 ngày làm việc</b> trên toàn Ấn Độ (trong điều kiện bình
-                thường).
+              Chúng tôi sẽ hỗ trợ vận chuyển miễn phí cho đơn hàng trên 200.000(VNĐ) trong nội thành TP HCM hoặc trên 100.000(VNĐ) khu vực Quận 9.
               </li>
             </ul>
           </div>
@@ -56,8 +48,7 @@ const ShippingPolicy = () => {
             </h2>
             <ul>
               <li>
-                COD có sẵn cho tất cả các sản phẩm, ngoại trừ sản phẩm kỹ thuật
-                số.
+              COD có sẵn cho tất cả các sản phẩm của Sugar Silk Cake.
               </li>
               <li>
                 Trong trường hợp có thay đổi, bạn có thể liên hệ với bộ phận hỗ
