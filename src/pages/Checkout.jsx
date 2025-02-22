@@ -35,7 +35,7 @@ const Checkout = () => {
       other: "",
       state: "",
       country: "",
-      pincode: "",
+      pincode: "70000",
     },
 
     validationSchema: checkoutSchema,
@@ -46,7 +46,6 @@ const Checkout = () => {
     },
   });
   const cartProducts = useSelector((state) => state?.auth?.getCart);
-  let shippingCharge = 50;
 
   useEffect(() => {
     let cartQuantity = 0;
@@ -59,7 +58,7 @@ const Checkout = () => {
     setCartSubTotal(cartSum);
     setCartTotalQuantity(cartQuantity);
   }, [cartProducts]);
-  const orderAmount = cartSubTotal + shippingCharge;
+  const orderAmount = cartSubTotal;
   const loadScript = (src) => {
     return new Promise((resolve) => {
       const script = document.createElement("script");
@@ -230,7 +229,7 @@ const Checkout = () => {
                         {formik.touched.state && formik.errors.state}
                       </div>
                     </label>
-                    <label>
+                    {/* <label>
                       <span>
                         Mã bưu điện <span className="required">*</span>
                       </span>
@@ -245,7 +244,7 @@ const Checkout = () => {
                       <div className="error">
                         {formik.touched.pincode && formik.errors.pincode}
                       </div>
-                    </label>
+                    </label> */}
                   </div>
                   <div className="Yorder">
                     <table>
@@ -289,7 +288,7 @@ const Checkout = () => {
                             })}
                           </td>
                         </tr>
-                        <tr>
+                        {/* <tr>
                           <td>Phí vận chuyển</td>
                           <td>
                             {Number(shippingCharge).toLocaleString("vi-VN", {
@@ -297,7 +296,7 @@ const Checkout = () => {
                               currency: "VND",
                             })}
                           </td>
-                        </tr>
+                        </tr> */}
                         <tr className="total-ammount">
                           <td>Số tiền đơn hàng</td>
                           <td>
