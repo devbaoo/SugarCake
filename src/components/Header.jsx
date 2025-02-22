@@ -65,7 +65,7 @@ const Header = () => {
               </div>
               <span className="menu-line"></span>
               <div>
-                <p>Đường dây nóng: +0945337450</p>
+                <p>Hotline: +84945337450</p>
               </div>
             </div>
             <div className="header-top-sections ">

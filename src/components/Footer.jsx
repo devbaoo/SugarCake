@@ -22,8 +22,8 @@ const Footer = () => {
             </p>
             <div className="l-footer-item">
               <IoCallOutline />
-              <span>Đường dây nóng 24/7:</span>
-              <h2>0945337450</h2>
+              <span>Hotline 24/7:</span>
+              <h2>+84945337450</h2>
             </div>
             <div className="l-footer-item">
               <IoHomeOutline />
