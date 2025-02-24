@@ -73,7 +73,7 @@ const PaymentSuccess = () => {
         if (verificationStatus === "success") {
             console.log("Thanh toán thành công, chuyển hướng về /orders sau 5 giây...");
             const timeout = setTimeout(() => {
-                navigate("/orders", { replace: true });
+                navigate("/cart", { replace: true });
             }, 5000);
 
             return () => clearTimeout(timeout);
