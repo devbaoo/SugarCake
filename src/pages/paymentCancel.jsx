@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { FaTimesCircle } from "react-icons/fa";
@@ -6,24 +5,26 @@ import MetaTitle from "../components/MetaTitle";
 import axios from "axios";
 import { base_url } from "../utils/base_url";
 
-
 const PaymentCancel = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    const [verificationStatus, setVerificationStatus] = useState(null);
+    const [verificationStatus, setVerificationStatus] = useState("pending");
 
     useEffect(() => {
         const verifyCancellation = async () => {
             try {
-                // Extract orderCode and other necessary data from the URL
                 const queryParams = new URLSearchParams(location.search);
                 const orderCode = queryParams.get("orderCode");
                 const paymentId = queryParams.get("id");
                 const signature = queryParams.get("signature");
 
                 if (!orderCode || !paymentId || !signature) {
-                    throw new Error("Missing payment verification data");
+                    console.error("Thiếu thông tin xác minh thanh toán.");
+                    setVerificationStatus("failed");
+                    return;
                 }
+
+                console.log("Đang xác minh giao dịch hủy:", { orderCode, paymentId, signature });
 
                 const response = await axios.post(
                     `${base_url}/payment/order/payment-verification`,
@@ -37,16 +38,17 @@ const PaymentCancel = () => {
                         paymentMethod: "ONLINE",
                     }
                 );
-                console.log("API Response:", response.data);
 
+                console.log("Phản hồi từ API:", response.data);
 
                 if (response.data.success) {
                     setVerificationStatus("cancelled");
                 } else {
+                    console.error("Xác minh hủy thất bại:", response.data);
                     setVerificationStatus("failed");
                 }
             } catch (error) {
-                console.error("Payment cancellation verification failed:", error);
+                console.error("Lỗi khi xác minh thanh toán:", error);
                 setVerificationStatus("failed");
             }
         };
@@ -56,8 +58,9 @@ const PaymentCancel = () => {
 
     useEffect(() => {
         if (verificationStatus === "cancelled") {
+            console.log("Hủy thành công, chuyển hướng về /cart sau 5 giây...");
             const timeout = setTimeout(() => {
-                navigate("/cart");
+                navigate("/cart", { replace: true });
             }, 5000);
 
             return () => clearTimeout(timeout);
@@ -73,20 +76,14 @@ const PaymentCancel = () => {
                         <>
                             <FaTimesCircle style={styles.icon} />
                             <h1 style={styles.title}>Thanh toán không thành công!</h1>
-                            <p style={styles.message}>
-                                Rất tiếc, giao dịch của bạn đã bị hủy.
-                            </p>
-                            <p style={styles.submessage}>
-                                Bạn sẽ được chuyển hướng về giỏ hàng sau 5 giây...
-                            </p>
+                            <p style={styles.message}>Giao dịch của bạn đã bị hủy.</p>
+                            <p style={styles.submessage}>Bạn sẽ được chuyển hướng về giỏ hàng sau 5 giây...</p>
                         </>
                     ) : verificationStatus === "failed" ? (
                         <>
                             <FaTimesCircle style={styles.icon} />
                             <h1 style={styles.title}>Xác minh thất bại!</h1>
-                            <p style={styles.message}>
-                                Có lỗi xảy ra khi xác minh giao dịch. Vui lòng thử lại.
-                            </p>
+                            <p style={styles.message}>Có lỗi xảy ra khi xác minh giao dịch. Vui lòng thử lại.</p>
                         </>
                     ) : (
                         <p style={styles.message}>Đang xác minh hủy giao dịch...</p>
