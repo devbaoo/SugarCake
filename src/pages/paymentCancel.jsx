@@ -26,6 +26,13 @@ const PaymentCancel = () => {
 
                 console.log("Đang xác minh giao dịch hủy:", { orderCode, paymentId, signature });
 
+                const token = localStorage.getItem("token"); // 🛠️ Lấy token từ localStorage
+                if (!token) {
+                    console.error("Không tìm thấy token.");
+                    setVerificationStatus("failed");
+                    return;
+                }
+
                 const response = await axios.post(
                     `${base_url}payment/order/payment-verification`,
                     {
@@ -36,6 +43,12 @@ const PaymentCancel = () => {
                             paymentId,
                         },
                         paymentMethod: "ONLINE",
+                    },
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`, // 🔥 Thêm token vào headers
+                            "Content-Type": "application/json",
+                        },
                     }
                 );
 
@@ -52,7 +65,6 @@ const PaymentCancel = () => {
                 setVerificationStatus("failed");
             }
         };
-
         verifyCancellation();
     }, [location]);
 
