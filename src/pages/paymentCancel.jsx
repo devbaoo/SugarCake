@@ -27,7 +27,7 @@ const PaymentCancel = () => {
                 console.log("Đang xác minh giao dịch hủy:", { orderCode, paymentId, signature });
 
                 const response = await axios.post(
-                    `${base_url}/payment/order/payment-verification`,
+                    `${base_url}payment/order/payment-verification`,
                     {
                         signature,
                         order: {
