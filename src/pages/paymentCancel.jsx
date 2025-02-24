@@ -1,38 +1,89 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { FaTimesCircle } from 'react-icons/fa';
-import MetaTitle from '../components/MetaTitle';
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { FaTimesCircle } from "react-icons/fa";
+import MetaTitle from "../components/MetaTitle";
+import axios from "axios";
+import { base_url } from "../utils/base_url";
 
 const PaymentCancel = () => {
     const navigate = useNavigate();
+    const location = useLocation();
+    const [verificationStatus, setVerificationStatus] = useState("loading"); // ✅ Trạng thái loading ban đầu
 
     useEffect(() => {
-        const timeout = setTimeout(() => {
-            navigate('/cart');
-        }, 5000);
+        const verifyCancellation = async () => {
+            try {
+                const queryParams = new URLSearchParams(location.search);
+                const orderCode = queryParams.get("orderCode");
+                const paymentId = queryParams.get("id");
+                const signature = queryParams.get("signature");
 
-        return () => clearTimeout(timeout);
-    }, [navigate]);
+                if (!orderCode || !paymentId || !signature) {
+                    setVerificationStatus("missing-data");
+                    return;
+                }
+
+                const response = await axios.post(
+                    `${base_url}/payment/order/payment-verification`,
+                    {
+                        signature,
+                        order: {
+                            orderCode,
+                            status: "CANCELLED",
+                            paymentId,
+                        },
+                        paymentMethod: "ONLINE",
+                    }
+                );
+
+                if (response.data.success) {
+                    setVerificationStatus("cancelled");
+                    setTimeout(() => navigate("/cart"), 5000); // ✅ Tự động chuyển hướng
+                } else {
+                    setVerificationStatus("failed");
+                }
+            } catch (error) {
+                console.error("Payment cancellation verification failed:", error);
+                setVerificationStatus("failed");
+            }
+        };
+
+        verifyCancellation();
+    }, [location, navigate]);
 
     return (
         <>
-            <MetaTitle title={"Thanh toán thất bại"} />
-            <div style={styles.container}>
-                <div style={styles.card}>
-                    <FaTimesCircle style={styles.icon} />
-                    <h1 style={styles.title}>Thanh toán không thành công!</h1>
-                    <p style={styles.message}>
-                        Rất tiếc, giao dịch của bạn đã bị hủy hoặc có lỗi xảy ra.
-                    </p>
-                    <p style={styles.submessage}>
-                        Bạn sẽ được chuyển hướng về giỏ hàng sau 5 giây...
-                    </p>
-                    <div style={styles.buttons}>
-                        <Link to="/cart" style={styles.button}>
+            <MetaTitle title="Thanh toán thất bại" />
+            <div className="min-h-screen flex justify-center items-center p-6">
+                <div className="bg-white p-10 rounded-lg shadow-lg text-center max-w-md w-full">
+                    <FaTimesCircle className="text-red-500 text-6xl mb-4" />
+                    {verificationStatus === "cancelled" && (
+                        <>
+                            <h1 className="text-2xl font-bold text-gray-800">Thanh toán không thành công!</h1>
+                            <p className="text-gray-600 mt-2">Rất tiếc, giao dịch của bạn đã bị hủy.</p>
+                            <p className="text-gray-500 mt-1">Bạn sẽ được chuyển hướng về giỏ hàng sau 5 giây...</p>
+                        </>
+                    )}
+                    {verificationStatus === "failed" && (
+                        <>
+                            <h1 className="text-2xl font-bold text-gray-800">Xác minh thất bại!</h1>
+                            <p className="text-gray-600 mt-2">Có lỗi xảy ra khi xác minh giao dịch. Vui lòng thử lại.</p>
+                        </>
+                    )}
+                    {verificationStatus === "missing-data" && (
+                        <>
+                            <h1 className="text-2xl font-bold text-gray-800">Thiếu thông tin!</h1>
+                            <p className="text-gray-600 mt-2">Không tìm thấy thông tin giao dịch hợp lệ.</p>
+                        </>
+                    )}
+                    {verificationStatus === "loading" && (
+                        <p className="text-gray-600">Đang xác minh hủy giao dịch...</p>
+                    )}
+                    <div className="mt-6 flex justify-center space-x-4">
+                        <Link to="/cart" className="bg-red-500 text-white py-2 px-4 rounded-lg transition hover:bg-red-600">
                             Quay lại giỏ hàng
                         </Link>
-                        <Link to="/" style={{...styles.button, background: '#666'}}>
+                        <Link to="/" className="bg-gray-600 text-white py-2 px-4 rounded-lg transition hover:bg-gray-700">
                             Tiếp tục mua sắm
                         </Link>
                     </div>
@@ -40,60 +91,6 @@ const PaymentCancel = () => {
             </div>
         </>
     );
-};
-
-const styles = {
-    container: {
-        minHeight: '80vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: '20px',
-    },
-    card: {
-        background: 'white',
-        padding: '40px',
-        borderRadius: '10px',
-        boxShadow: '0 0 20px rgba(0,0,0,0.1)',
-        textAlign: 'center',
-        maxWidth: '500px',
-        width: '100%',
-    },
-    icon: {
-        color: '#dc3545',
-        fontSize: '64px',
-        marginBottom: '20px',
-    },
-    title: {
-        color: '#333',
-        marginBottom: '20px',
-        fontSize: '24px',
-    },
-    message: {
-        color: '#666',
-        marginBottom: '10px',
-        fontSize: '16px',
-    },
-    submessage: {
-        color: '#888',
-        fontSize: '14px',
-        marginBottom: '30px',
-    },
-    buttons: {
-        display: 'flex',
-        justifyContent: 'center',
-        gap: '15px',
-        flexWrap: 'wrap',
-    },
-    button: {
-        background: '#dc3545',
-        color: 'white',
-        padding: '12px 24px',
-        borderRadius: '5px',
-        textDecoration: 'none',
-        fontSize: '14px',
-        transition: 'background 0.3s',
-    },
 };
 
 export default PaymentCancel;
