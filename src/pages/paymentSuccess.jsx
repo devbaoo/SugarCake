@@ -40,7 +40,7 @@ const PaymentSuccess = () => {
                         signature,
                         order: {
                             orderCode,
-                            status: "COMPLETED",
+                            status: "PAID",
                             paymentId,
                         },
                         paymentMethod: "ONLINE",
