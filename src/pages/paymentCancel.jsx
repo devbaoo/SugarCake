@@ -1,9 +1,10 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { FaTimesCircle } from "react-icons/fa";
 import MetaTitle from "../components/MetaTitle";
 import axios from "axios";
-import base_url from "../utils/base_url";
+import { base_url } from "../utils/base_url";
 
 
 const PaymentCancel = () => {
