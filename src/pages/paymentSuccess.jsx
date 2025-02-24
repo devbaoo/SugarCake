@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
+import { FaCheckCircle } from "react-icons/fa";
 import MetaTitle from "../components/MetaTitle";
 import axios from "axios";
 import { base_url } from "../utils/base_url";
@@ -9,53 +9,71 @@ import { base_url } from "../utils/base_url";
 const PaymentSuccess = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    const [verificationStatus, setVerificationStatus] = useState(null);
+    const [verificationStatus, setVerificationStatus] = useState("pending");
 
     useEffect(() => {
         const verifyPayment = async () => {
             try {
-                // Extract orderCode and other necessary data from the URL or state
                 const queryParams = new URLSearchParams(location.search);
                 const orderCode = queryParams.get("orderCode");
                 const paymentId = queryParams.get("id");
                 const signature = queryParams.get("signature");
 
                 if (!orderCode || !paymentId || !signature) {
-                    throw new Error("Missing payment verification data");
+                    console.error("Thiếu thông tin xác minh thanh toán.");
+                    setVerificationStatus("failed");
+                    return;
                 }
 
-                // eslint-disable-next-line no-undef
+                console.log("Đang xác minh giao dịch thành công:", { orderCode, paymentId, signature });
+
+                const token = localStorage.getItem("token");
+                if (!token) {
+                    console.error("Không tìm thấy token.");
+                    setVerificationStatus("failed");
+                    return;
+                }
+
                 const response = await axios.post(
-                    `${base_url}/payment/order/payment-verification`,
+                    `${base_url}payment/order/payment-verification`,
                     {
                         signature,
                         order: {
                             orderCode,
-                            status: "PAID", // Assuming status is PAID for success
+                            status: "COMPLETED",
                             paymentId,
                         },
                         paymentMethod: "ONLINE",
+                    },
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                            "Content-Type": "application/json",
+                        },
                     }
                 );
+
+                console.log("Phản hồi từ API:", response.data);
 
                 if (response.data.success) {
                     setVerificationStatus("success");
                 } else {
+                    console.error("Xác minh thất bại:", response.data);
                     setVerificationStatus("failed");
                 }
             } catch (error) {
-                console.error("Payment verification failed:", error);
+                console.error("Lỗi khi xác minh thanh toán:", error);
                 setVerificationStatus("failed");
             }
         };
-
         verifyPayment();
     }, [location]);
 
     useEffect(() => {
         if (verificationStatus === "success") {
+            console.log("Thanh toán thành công, chuyển hướng về /orders sau 5 giây...");
             const timeout = setTimeout(() => {
-                navigate("/my-orders");
+                navigate("/orders", { replace: true });
             }, 5000);
 
             return () => clearTimeout(timeout);
@@ -65,35 +83,29 @@ const PaymentSuccess = () => {
     return (
         <>
             <MetaTitle title={"Thanh toán thành công"} />
-            <div className="success-container" style={styles.container}>
+            <div style={styles.container}>
                 <div style={styles.card}>
                     {verificationStatus === "success" ? (
                         <>
                             <FaCheckCircle style={styles.icon} />
                             <h1 style={styles.title}>Thanh toán thành công!</h1>
-                            <p style={styles.message}>
-                                Cảm ơn bạn đã mua hàng. Đơn hàng của bạn đã được xác nhận.
-                            </p>
-                            <p style={styles.submessage}>
-                                Bạn sẽ được chuyển hướng đến trang đơn hàng sau 5 giây...
-                            </p>
+                            <p style={styles.message}>Cảm ơn bạn đã mua hàng.</p>
+                            <p style={styles.submessage}>Bạn sẽ được chuyển hướng về đơn hàng sau 5 giây...</p>
                         </>
                     ) : verificationStatus === "failed" ? (
                         <>
-                            <FaTimesCircle style={{ ...styles.icon, color: "#dc3545" }} />
-                            <h1 style={styles.title}>Thanh toán thất bại!</h1>
-                            <p style={styles.message}>
-                                Rất tiếc, giao dịch của bạn không thành công. Vui lòng thử lại.
-                            </p>
+                            <FaCheckCircle style={styles.icon} />
+                            <h1 style={styles.title}>Xác minh thất bại!</h1>
+                            <p style={styles.message}>Có lỗi xảy ra khi xác minh giao dịch. Vui lòng thử lại.</p>
                         </>
                     ) : (
-                        <p style={styles.message}>Đang xác minh thanh toán...</p>
+                        <p style={styles.message}>Đang xác minh giao dịch...</p>
                     )}
                     <div style={styles.buttons}>
-                        <Link to="/my-orders" style={styles.button}>
+                        <Link to="/orders" style={styles.button}>
                             Xem đơn hàng
                         </Link>
-                        <Link to="/" style={styles.button}>
+                        <Link to="/" style={{ ...styles.button, background: "#666" }}>
                             Tiếp tục mua sắm
                         </Link>
                     </div>
@@ -121,7 +133,7 @@ const styles = {
         width: "100%",
     },
     icon: {
-        color: "#4CAF50",
+        color: "#28a745",
         fontSize: "64px",
         marginBottom: "20px",
     },
@@ -147,7 +159,7 @@ const styles = {
         flexWrap: "wrap",
     },
     button: {
-        background: "#4CAF50",
+        background: "#28a745",
         color: "white",
         padding: "12px 24px",
         borderRadius: "5px",
