@@ -613,8 +613,7 @@ button {
   height: 410px;
   overflow: hidden;
   width: 300px;
-  box-shadow:
-    rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
@@ -639,9 +638,7 @@ button {
   position: absolute;
   top: 67%;
   width: 100%;
-  transition:
-    box-shadow 0.3s ease-in-out,
-    top 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out, top 0.3s ease-in-out;
 }
 
 .card:hover .details {
@@ -693,9 +690,7 @@ button {
   text-decoration: none;
   text-transform: capitalize;
   width: 100%;
-  transition:
-    box-shadow 0.3s ease-in-out,
-    transform 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .atc-btn:hover {
@@ -748,8 +743,7 @@ button {
   padding: 10px;
 }
 .product-grid:hover {
-  box-shadow:
-    rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 .product-image {
@@ -903,8 +897,7 @@ button {
   flex-direction: column;
   align-items: center;
   border-radius: 5px;
-  box-shadow:
-    rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 .wishlist-img {
@@ -962,8 +955,7 @@ button {
   border-radius: 0.5rem;
   padding: 1rem;
   margin-bottom: 1rem;
-  box-shadow:
-    rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
@@ -1283,9 +1275,7 @@ button {
   background-color: #f3f4f6;
   font-size: 0.85rem;
   text-transform: uppercase;
-  transition:
-    background-color 0.3s,
-    color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .featured-product-button:hover .default-state {
@@ -1299,9 +1289,7 @@ button {
   justify-content: center;
   background-color: #e2e8f0;
   padding: 0 1.25rem;
-  transition:
-    background-color 0.3s,
-    color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .featured-product-button:hover .plus-state {
@@ -1589,8 +1577,7 @@ button {
 
 .contact-form {
   background-color: #ffffff;
-  box-shadow:
-    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
   padding: 2rem;
 }
@@ -2117,6 +2104,7 @@ button {
   width: 95%;
   padding-left: 20px;
   margin-bottom: 30px;
+  line-height: 1.6; /* Thêm line-height để text dễ đọc hơn */
 }
 
 .faq {
@@ -2145,9 +2133,7 @@ button {
   height: 10px;
   transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
-  transition:
-    transform 0.5s,
-    -webkit-transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
   border-top: 2px solid rgba(0, 0, 0, 0.33);
   border-right: 2px solid rgba(0, 0, 0, 0.33);
   float: right;
@@ -2161,9 +2147,7 @@ button {
 .faq input[type="checkbox"]:checked + label > .faq-arrow {
   transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
-  transition:
-    transform 0.5s,
-    -webkit-transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
   -webkit-transform: rotate(135deg);
   transform: rotate(135deg);
 }
@@ -2171,7 +2155,8 @@ button {
   display: block;
   background: rgba(255, 255, 255, 255) !important;
   color: var(--fourth-color);
-  height: 155px;
+  height: auto !important; /* Thay đổi từ height cố định thành auto */
+  min-height: 60px;
   transition: height 0.5s;
 }
 
@@ -2179,6 +2164,7 @@ button {
   display: block;
   transition: height 0.5s;
   height: 60px;
+  overflow: hidden; /* Thêm overflow hidden khi đóng */
 }
 
 /* checkout page start here */
