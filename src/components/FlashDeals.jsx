@@ -11,7 +11,6 @@ const FlashDeals = () => {
 		const timer = setInterval(() => {
 			setTimeLeft(calculateTimeLeft());
 		}, 1000);
-
 		return () => clearInterval(timer);
 	}, []);
 
@@ -39,32 +38,30 @@ const FlashDeals = () => {
 
 	const totalProduct = useSelector((state) => state.product?.products);
 	const totalProducts = [...totalProduct].reverse();
+
 	return (
-		<>
-			<div className='flash-container'>
-				<div className='flash-title-timer container'>
-					<div className='flash-title'>
-						<ImPower />
-						<h2>Flash Deals</h2>
+		<div className="bg-gray-100 py-12">
+			<div className="max-w-7xl mx-auto px-6 lg:px-8">
+				{/* Header Section */}
+				<div className="flex items-center justify-between mb-8">
+					<div className="flex items-center gap-3">
+						<ImPower className="text-red-500 text-3xl animate-pulse" />
+						<h2 className="text-3xl font-bold text-gray-800">Flash Deals</h2>
 					</div>
-					<div className='countdown-container'>
-						<span>Ends in</span>
-						<div className='countdown'>
-							<span id='hours'>{timeLeft.hours} hours</span> :{" "}
-							<span id='minutes'>{timeLeft.minutes} mins</span> :{" "}
-							<span id='seconds'>{timeLeft.seconds} secs</span>
-						</div>
+					{/* Countdown Timer */}
+					<div className="bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-md">
+						TOP sản phẩm bán hết nhanh nhất
 					</div>
 				</div>
-				<div className='container'>
-					<div className='flash-products'>
-						{totalProducts.slice(0, 4).map((product, index) => (
-							<ProductCard key={index} product={product} />
-						))}
-					</div>
+
+				{/* Product Grid */}
+				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+					{totalProducts.slice(0, 4).map((product, index) => (
+						<ProductCard key={index} product={product} />
+					))}
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 
