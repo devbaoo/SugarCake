@@ -3,14 +3,14 @@ import MetaTitle from "../components/MetaTitle";
 const About = () => {
   return (
     <>
-      <MetaTitle title={"Giới thiệu: Công ty của chúng tôi"} />
+      <MetaTitle title={"Giới thiệu: Sugar Silk"} />
       <div className="about-container">
         <div className="container">
           <div className="about-content">
             <div className="about-image-container">
               <img
-                src="/images/quality_restoration_20250210111322142.jpg"
-                alt="Giới thiệu về chúng tôi"
+                src="/public/logovip.png"
+                alt="Giới thiệu về Sugar Silk"
                 className="about-image"
               />
             </div>
@@ -18,26 +18,16 @@ const About = () => {
               <span className="about-section-label">Về chúng tôi</span>
               <h2 className="about-section-heading">
                 Giới thiệu{" "}
-                <span className="company-name">Công ty của chúng tôi</span>
+                <span className="company-name">Sugar Silk</span>
               </h2>
               <p className="about-section-description">
-                Chúng tôi (Sugar Cake) cung cấp các sản phẩm chất lượng cao với
-                giá cả phải chăng. Tại đây, bạn có thể mua các sản phẩm chất
-                lượng với mức giá ưu đãi. Bạn có thể mua bất cứ thứ gì từ Ứng
-                dụng và Website của chúng tôi.
+                Chào mừng đến với Sugar Silk – nơi mang đến cho bạn những trải nghiệm ẩm thực ngọt ngào và độc đáo. Chúng tôi chuyên tạo ra những chiếc bánh ngọt thơm ngon với hương vị đặc trưng, được thiết kế tinh tế và cá nhân hóa theo sở thích của từng khách hàng.
                 <br />
                 <br />
-                Chúng tôi có kho hàng phong phú với các sản phẩm từ thời trang,
-                mỹ phẩm, đến đồ gia dụng và sản phẩm cho nhà bếp, và nhiều hơn
-                nữa. Với hơn 4 triệu sản phẩm và trên 300 danh mục, Sugar Cake
-                chắc chắn có mọi thứ bạn cần.
+                Tại Sugar Silk, niềm vui và sự sáng tạo của khách hàng luôn được đặt lên hàng đầu. Bạn có thể tự do mix và kết hợp các loại bánh để tạo thành set quà tặng ý nghĩa cho người thân yêu, biến những khoảnh khắc bình dị thành những kỷ niệm đáng nhớ.
                 <br />
                 <br />
-                Trong bộ sưu tập mới nhất của chúng tôi, bạn sẽ tìm thấy tất cả
-                các mặt hàng phổ biến và xu hướng với mức giá phải chăng, giúp
-                bạn tự tin khi tìm kiếm quần áo mới, phụ kiện, hay đơn giản là
-                một số mặt hàng hàng ngày cho gia đình. Sugar Cake có tất cả
-                những gì bạn cần.
+                Ngoài ra, chúng tôi thường xuyên tổ chức các sự kiện và mini game thú vị, nhằm kết nối và mang đến những trải nghiệm độc đáo cho khách hàng. Với cam kết về chất lượng sản phẩm cao cấp cùng mức giá hợp lý, Sugar Silk hy vọng sẽ là người bạn đồng hành tin cậy trong từng khoảnh khắc ngọt ngào của cuộc sống.
               </p>
             </div>
           </div>

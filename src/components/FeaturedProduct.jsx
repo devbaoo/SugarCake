@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { FiEye } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
@@ -38,12 +38,6 @@ const FeaturedProduct = ({ product }) => {
                   currency: "VND",
                 })}
               </p>
-              <del className="featured-discount">
-                {Number(price + (price * 20) / 100).toLocaleString("vi-VN", {
-                  style: "currency",
-                  currency: "VND",
-                })}
-              </del>
             </div>
             <Link onClick={handleRedirect} className="featured-title">
               <h3 className="featured-product-name">
