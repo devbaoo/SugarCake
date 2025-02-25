@@ -1,4 +1,6 @@
 import MetaTitle from "../components/MetaTitle";
+import logo from "/public/logovip.png";
+
 
 const About = () => {
   return (
@@ -9,7 +11,7 @@ const About = () => {
           <div className="about-content">
             <div className="about-image-container">
               <img
-                src="public/logovip.png"
+                src={logo}
                 alt="Giới thiệu về Sugar Silk"
                 className="about-image"
               />
