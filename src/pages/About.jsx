@@ -9,7 +9,7 @@ const About = () => {
           <div className="about-content">
             <div className="about-image-container">
               <img
-                src="/public/logovip.png"
+                src="public/logovip.png"
                 alt="Giới thiệu về Sugar Silk"
                 className="about-image"
               />
