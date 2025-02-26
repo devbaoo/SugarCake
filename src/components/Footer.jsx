@@ -6,19 +6,17 @@ import { FiMail } from "react-icons/fi";
 
 const Footer = () => {
   return (
-    <>
-      <div className="footer">
-        <div className="footer-top container">
-          <div className="footer-left">
-            <h2>Sugar Silk - Cửa hàng bánh</h2>
-            <p>
-            Sugar Silk sẽ mang đến cho bạn những chiếc bánh ngọt thơm ngon béo ngậy với hương vị đặc trưng riêng. Mục tiêu của chúng tôi là mang lại niềm vui và hạnh phúc qua từng chiếc bánh, biến những khoảnh khắc bình dị thành những kỷ niệm đáng nhớ.
-            </p>
-            <div className="l-footer-item">
-              <IoCallOutline />
-              <span>Hotline 24/7:</span>
-              <h2>+84945337450</h2>
-
+    <footer className="bg-gray-900 text-white py-10">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
+        {/* Left Section */}
+        <div>
+          <h2 className="text-xl font-semibold">Sugar Silk - Cửa hàng bánh</h2>
+          <p className="mt-3 text-gray-400">
+          Sugar Silk sẽ mang đến cho bạn những chiếc bánh ngọt thơm ngon béo ngậy với hương vị đặc trưng riêng. Mục tiêu của chúng tôi là mang lại niềm vui và hạnh phúc qua từng chiếc bánh, biến những khoảnh khắc bình dị thành những kỷ niệm đáng nhớ.          </p>
+          <div className="mt-4 space-y-2">
+            <div className="flex items-center gap-2">
+              <IoCallOutline className="text-lg" />
+              <span>+84 945 337 450</span>
             </div>
             <div className="flex items-center gap-2">
               <IoHomeOutline className="text-lg" />
@@ -65,7 +63,7 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Nhập email"
-              className=" p-2 text-gray-900 rounded-l-md focus:outline-none"
+              className="p-2 text-gray-900 rounded-l-md focus:outline-none"
             />
             <button type="submit" className="px-4 text-center bg-red-500 text-white rounded-r-md hover:bg-red-600">
               Đăng ký
@@ -78,10 +76,18 @@ const Footer = () => {
       <div className="border-t border-gray-700 mt-10 pt-6 px-6 text-center md:flex md:justify-between md:items-center">
         <p className="text-gray-400">&copy; 2024 SugarSilkCake. All rights reserved.</p>
         <div className="flex justify-center mt-4 md:mt-0 space-x-4">
-          <Link to="#" className="text-gray-400 hover:text-white"><FaFacebookF size={18} /></Link>
-          <Link to="#" className="text-gray-400 hover:text-white"><FaXTwitter size={18} /></Link>
-          <Link to="#" className="text-gray-400 hover:text-white"><FaInstagram size={18} /></Link>
-          <Link to="#" className="text-gray-400 hover:text-white"><FaPinterestP size={18} /></Link>
+          <Link to="#" className="text-gray-400 hover:text-white">
+            <FaFacebookF size={18} />
+          </Link>
+          <Link to="#" className="text-gray-400 hover:text-white">
+            <FaXTwitter size={18} />
+          </Link>
+          <Link to="#" className="text-gray-400 hover:text-white">
+            <FaInstagram size={18} />
+          </Link>
+          <Link to="#" className="text-gray-400 hover:text-white">
+            <FaPinterestP size={18} />
+          </Link>
         </div>
       </div>
     </footer>
