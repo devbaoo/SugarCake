@@ -29,25 +29,41 @@ const Home = () => {
 
   return (
     <>
-      <MetaTitle title="Sugar Silk Cake: Nền tảng mua sắm bánh đường tốt nhất!" />
+      <MetaTitle
+        title={"Sugar Silk Cake: Nền tảng mua sắm bánh đường tốt nhất!"}
+      />
+      <div className="home-container">
+        <Carousel />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginBottom: "30px",
+          }}
+        >
+          <img
+            className="flex justify-center"
+            src="/images/sugar.png"
+            alt="Hình ảnh sản phẩm"
+          />
+        </div>
+        <FlashDeals />
+        <div className="mini-banner-section">
+          <div className="mini-banners container">
+            <img
+              src="/images/att.HpUscksgfa7SU8wUfAe-sP6KlWRjN7DQmh8svjUpUoI.jpg"
+              alt="Banner sản phẩm"
+            />
+            <img
+              src="/images/att.DFLIiRjsDbYP5XPBvUgn8HxbCxhL6dcuKxdPbc3jaI4.jpg"
+              alt="Banner sản phẩm"
+            />
+            <img
+              src="/images/att.Uws6zXJ7MlrF4eAHMwXPeGYuK42RVtK2Ouv2aRgBJnk.jpg"
+              alt="Banner sản phẩm"
+            />
+          </div>
 
-      {/* Slider Carousel */}
-      <Carousel />
-
-      {/* Banner chính */}
-      <div className="flex justify-center mb-8 mt-8">
-        <img src="/images/sugar.png" alt="Hình ảnh sản phẩm" className="w-full max-w-[800px]" />
-      </div>
-
-      {/* Flash Deals */}
-      <FlashDeals />
-
-      {/* Mini Banners */}
-      <div className="container mx-auto py-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <img src="/images/quality_restoration_20250210111142533.jpg" alt="Banner sản phẩm" className="rounded-lg shadow-lg" />
-          <img src="/images/quality_restoration_20250210111234772.jpg" alt="Banner sản phẩm" className="rounded-lg shadow-lg" />
-          <img src="/images/quality_restoration_20250210111322142.jpg" alt="Banner sản phẩm" className="rounded-lg shadow-lg" />
         </div>
       </div>
 

@@ -6,18 +6,19 @@ import { FiMail } from "react-icons/fi";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-10">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
-        {/* Left Section */}
-        <div>
-          <h2 className="text-xl font-semibold">Sugar Silk - Cửa hàng bánh</h2>
-          <p className="mt-3 text-gray-400">
-            Chúng tôi cung cấp những chiếc bánh chất lượng cao với giá cả phải chăng. Bạn có thể mua bánh từ ứng dụng và website của chúng tôi.
-          </p>
-          <div className="mt-4 space-y-2">
-            <div className="flex items-center gap-2">
-              <IoCallOutline className="text-lg" />
-              <span>+84 945 337 450</span>
+    <>
+      <div className="footer">
+        <div className="footer-top container">
+          <div className="footer-left">
+            <h2>Sugar Silk - Cửa hàng bánh</h2>
+            <p>
+            Sugar Silk sẽ mang đến cho bạn những chiếc bánh ngọt thơm ngon béo ngậy với hương vị đặc trưng riêng. Mục tiêu của chúng tôi là mang lại niềm vui và hạnh phúc qua từng chiếc bánh, biến những khoảnh khắc bình dị thành những kỷ niệm đáng nhớ.
+            </p>
+            <div className="l-footer-item">
+              <IoCallOutline />
+              <span>Hotline 24/7:</span>
+              <h2>+84945337450</h2>
+
             </div>
             <div className="flex items-center gap-2">
               <IoHomeOutline className="text-lg" />
