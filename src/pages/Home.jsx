@@ -1,21 +1,30 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getProducts } from "../features/products/productSlice";
+
 import Carousel from "../components/Carousel";
 import FlashDeals from "../components/FlashDeals";
 import MetaTitle from "../components/MetaTitle";
-import { useDispatch, useSelector } from "react-redux";
-import { getProducts } from "../features/products/productSlice";
 import FeaturedProduct from "../components/FeaturedProduct";
 
 const Home = () => {
   const dispatch = useDispatch();
+
+  // Fetch products khi component mount
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
 
+  // Lấy danh sách sản phẩm từ Redux store
   const totalProduct = useSelector((state) => state?.product?.products);
-  const totalProducts = [...totalProduct].reverse();
-  const specialProducts = totalProducts.filter(
-    (product) => product.tags === "Special"
+
+  // Reverse danh sách sản phẩm để lấy sản phẩm mới nhất
+  const totalProducts = useMemo(() => [...totalProduct].reverse(), [totalProduct]);
+
+  // Lọc sản phẩm có tag "Special"
+  const specialProducts = useMemo(
+    () => totalProducts.filter((product) => product.tags === "Special"),
+    [totalProducts]
   );
 
   return (
@@ -54,16 +63,17 @@ const Home = () => {
               alt="Banner sản phẩm"
             />
           </div>
+
         </div>
-        <div className="home-sale">
-          <div className="container">
-            <h2 className="home-section-title">Dành riêng cho bạn</h2>
-            <div className="home-special">
-              {specialProducts.slice(0, 4)?.map((product, index) => (
-                <FeaturedProduct key={index} product={product} />
-              ))}
-            </div>
-          </div>
+      </div>
+
+      {/* Sản phẩm dành riêng */}
+      <div className="container mx-auto py-10">
+        <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Dành riêng cho bạn</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {specialProducts.slice(0, 4).map((product, index) => (
+            <FeaturedProduct key={index} product={product} />
+          ))}
         </div>
       </div>
     </>
