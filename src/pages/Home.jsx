@@ -42,15 +42,15 @@ const Home = () => {
         <div className="mini-banner-section">
           <div className="mini-banners container">
             <img
-              src="/images/quality_restoration_20250210111142533.jpg"
+              src="/images/att.HpUscksgfa7SU8wUfAe-sP6KlWRjN7DQmh8svjUpUoI.jpg"
               alt="Banner sản phẩm"
             />
             <img
-              src="/images/quality_restoration_20250210111234772.jpg"
+              src="/images/att.DFLIiRjsDbYP5XPBvUgn8HxbCxhL6dcuKxdPbc3jaI4.jpg"
               alt="Banner sản phẩm"
             />
             <img
-              src="/images/quality_restoration_20250210111322142.jpg"
+              src="/images/att.Uws6zXJ7MlrF4eAHMwXPeGYuK42RVtK2Ouv2aRgBJnk.jpg"
               alt="Banner sản phẩm"
             />
           </div>

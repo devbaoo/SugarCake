@@ -15,10 +15,7 @@ const Footer = () => {
           <div className="footer-left">
             <h2>Sugar Silk - Cửa hàng bánh</h2>
             <p>
-              Chúng tôi (Sugar Silk) cung cấp những chiếc bánh chất lượng cao
-              với giá cả phải chăng. Tại đây, bạn có thể mua bánh chất lượng với
-              giá ưu đãi. Bạn có thể mua mọi thứ từ Ứng dụng và Website của
-              chúng tôi.
+            Sugar Silk sẽ mang đến cho bạn những chiếc bánh ngọt thơm ngon béo ngậy với hương vị đặc trưng riêng. Mục tiêu của chúng tôi là mang lại niềm vui và hạnh phúc qua từng chiếc bánh, biến những khoảnh khắc bình dị thành những kỷ niệm đáng nhớ.
             </p>
             <div className="l-footer-item">
               <IoCallOutline />
