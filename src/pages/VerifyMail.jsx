@@ -11,7 +11,7 @@ const VerifyMail = () => {
     try {
       const response = await axios.put(`${base_url}user/verify/${id}`);
       if (response.data?.success) {
-        toast.success(response.data?.message);
+        toast.success("Xác nhận email thành công");
         setTimeout(() => {
           navigate("/sign-in");
         }, 600);

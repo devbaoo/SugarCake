@@ -7,7 +7,7 @@ import {
   rateProduct,
 } from "../features/products/productSlice";
 import { Link, useLocation } from "react-router-dom";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 import ReactStars from "react-rating-stars-component";
 import { addToCart, getCart } from "../features/auth/userSlice";
 import { useNavigate } from "react-router-dom";
@@ -40,7 +40,7 @@ const SingleProduct = () => {
 
   const addItemToWishlist = (prodId) => {
     dispatch(addToWishlist(prodId));
-    toast.success("Product Added to Wishlist!");
+    toast.success("Đã thêm sản phẩm vào danh sách yêu thích");
   };
 
   useEffect(() => {

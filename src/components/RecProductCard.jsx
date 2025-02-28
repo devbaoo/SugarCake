@@ -4,7 +4,7 @@ import ReactStars from "react-rating-stars-component";
 import { Link } from "react-router-dom";
 import { addToWishlist } from "../features/products/productSlice";
 import { useDispatch } from "react-redux";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 import { FiEye } from "react-icons/fi";
 
 const RecProductCard = ({ product }) => {
@@ -13,7 +13,7 @@ const RecProductCard = ({ product }) => {
 	const dispatch = useDispatch();
 	const addItemToWishlist = (productId) => {
 		dispatch(addToWishlist(productId));
-		toast.success("Product Added to Wishlist!");
+		toast.success("Đã thêm sản phẩm vào danh sách yêu thích");
 	};
 	return (
 		<>

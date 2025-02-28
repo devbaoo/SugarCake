@@ -19,7 +19,7 @@ const Wishlist = () => {
 
   const removeWishlistItems = (itemId) => {
     dispatch(addToWishlist(itemId));
-    toast.warning("Product Removed from Wishlist!");
+    toast.warning("Đã xóa sản phẩm khỏi danh sách yêu thích");
   };
 
   return (
