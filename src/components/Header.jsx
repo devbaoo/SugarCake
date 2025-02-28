@@ -62,10 +62,10 @@ const Header = () => {
     <>
       <div className="bg-rose-400 text-white">
         <div className="flex justify-between items-center p-4">
-          <div className="flex space-x-4">
+          <div className="md:flex hidden space-x-4">
             <p>Thu Duc, Ho Chi Minh</p>
             <span className="border-l border-pink-800 h-4"></span>
-            <p>Hotline: +84945337450</p>
+            <p>Hotline: +84 945337450</p>
           </div>
           <div className="flex space-x-4">
             {loggedUser ? (
@@ -95,7 +95,7 @@ const Header = () => {
             <div className="relative">
               <input
                 type="text"
-                className="w-full p-2 rounded border border-gray-300 focus:outline-none focus:ring focus:ring-pink-500"
+                className="w-full p-2 rounded border text-black border-gray-300 focus:outline-none focus:ring focus:ring-pink-500"
                 placeholder="Tìm kiếm theo danh mục hoặc sản phẩm..."
                 value={searchQuery}
                 onChange={handleSearchChange}
@@ -143,8 +143,8 @@ const Header = () => {
         </div>
 
         <div className="bg-rose-300">
-          <div className="container mx-auto flex justify-between items-center py-2">
-            <div className="flex items-center">
+          <div className="container mx-auto flex justify-between  items-center py-2">
+            <div className="flex items-center md:pl-5 md:pr-5">
               <button onClick={toggleDrawer} className="text-white">
                 <IoMenu size={25} />
               </button>
@@ -171,12 +171,12 @@ const Header = () => {
                 )}
               </div> */}
             </div>
-            <div className="flex space-x-8">
-              <NavLink to={"/"} className="hover:underline font-bold">Trang chủ</NavLink>
-              <NavLink to={"/shop"} className="hover:underline font-bold">Cửa hàng</NavLink>
-              <NavLink to={"/sale"} className="hover:underline font-bold">Khuyến mãi</NavLink>
-              <NavLink to={"/contact"} className="hover:underline font-bold">Liên hệ</NavLink>
-              <NavLink to={"/about"} className="hover:underline font-bold">Giới thiệu</NavLink>
+            <div className="md:flex space-x-8 hidden">
+              <NavLink to={"/"} className=" font-bold ">Trang chủ</NavLink>
+              <NavLink to={"/shop"} className=" font-bold">Cửa hàng</NavLink>
+              <NavLink to={"/sale"} className=" font-bold">Khuyến mãi</NavLink>
+              <NavLink to={"/contact"} className=" font-bold">Liên hệ</NavLink>
+              <NavLink to={"/about"} className=" font-bold">Giới thiệu</NavLink>
             </div>
             <Link
               target="_blank"
@@ -198,7 +198,7 @@ const Header = () => {
           <div className="p-4 bg-rose-400 h-full text-white">
             <div className="flex items-center justify-between">
               <Link to={"/"}>
-                <img src={drLogo} alt="DR Store" className="w-20" />
+                <img src={drLogo} alt="Sugar Silk Cake" className="w-20" />
               </Link>
               <button onClick={toggleDrawer} className="text-white">
                 <IoExit size={25} />

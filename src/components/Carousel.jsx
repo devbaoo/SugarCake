@@ -7,19 +7,19 @@ const slidesData = [
 		title: "Khuyến mãi Thứ Sáu",
 		subtitle: "Mua sắm ngay và nhận ngay 30% GIẢM GIÁ",
 		buttonText: "Mua ngay",
-		image: "/images/anh1.jpg",
+		image: "/images/quality_restoration_20250228134956108.jpg",
 	},
 	{
 		title: "Ưu đãi Ngày Lễ",
 		subtitle: "Nhấn vào bên dưới để nhận ưu đãi đặc biệt",
 		buttonText: "Xem ngay",
-		image: "/images/banner.jpg",
+		image: "/images/SUGAR_SILK_CAKE.jpg",
 	},
 	{
 		title: "Giảm giá Cuối Tuần",
 		subtitle: "Nhận thêm 20% giảm giá vào mỗi cuối tuần",
 		buttonText: "Mua ngay",
-		image: "/images/banh.jpg",
+		image: "/images/quality_restoration_20250228134747251.jpg",
 	},
 ];
 
@@ -51,7 +51,7 @@ const Carousel = () => {
 	};
 
 	return (
-		<div className="relative w-full h-[500px] overflow-hidden shadow-lg">
+		<div className="relative w-full h-[600px] overflow-hidden shadow-lg">
 			{slidesData.map((slide, index) => (
 				<motion.div
 					key={index}

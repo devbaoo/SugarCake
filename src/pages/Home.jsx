@@ -34,19 +34,16 @@ const Home = () => {
       />
       <div className="home-container">
         <Carousel />
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            marginBottom: "30px",
-          }}
-        >
-          <img
-            className="flex justify-center"
-            src="/images/sugar.png"
-            alt="Hình ảnh sản phẩm"
-          />
+        <div className="mt-10 m-auto flex mb-8 w-[60%] h-full">
+          <div>
+            <img
+              src="/images/quality_restoration_20250228135127881.jpg"
+              alt="Hình ảnh sản phẩm"
+              className="max-w-full h-auto object-contain"
+            />
+          </div>
         </div>
+
         <FlashDeals />
         <div className="mini-banner-section">
           <div className="mini-banners container">
