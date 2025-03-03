@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { ImPower } from "react-icons/im";
 import ProductCard from "./ProductCard";
 import { useDispatch, useSelector } from "react-redux";
@@ -39,6 +39,11 @@ const FlashDeals = () => {
 	const totalProduct = useSelector((state) => state.product?.products);
 	const totalProducts = [...totalProduct].reverse();
 
+	const cakeProducts = useMemo(
+		() => totalProducts.filter((product) => product.category === "Bánh"),
+		[totalProducts]
+	)
+
 	return (
 		<div className="bg-gray-100 py-12">
 			<div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -56,7 +61,7 @@ const FlashDeals = () => {
 
 				{/* Product Grid */}
 				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-					{totalProducts.slice(0, 4).map((product, index) => (
+					{cakeProducts.slice(0, 4).map((product, index) => (
 						<ProductCard key={index} product={product} />
 					))}
 				</div>

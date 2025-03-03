@@ -9,7 +9,7 @@ const FeaturedProduct = ({ product }) => {
   const handleRedirect = () => navigate(`/product/${_id}`);
 
   return (
-    <div className="bg-white w-72 rounded-lg shadow-lg p-4 transform transition duration-300 hover:scale-105">
+    <div className="bg-white w-72 rounded-lg shadow-lg p-4 transform transition duration-300 hover:scale-105 mx-auto">
       {/* Product Image */}
       <Link onClick={handleRedirect}>
 
@@ -20,11 +20,11 @@ const FeaturedProduct = ({ product }) => {
             alt="Product"
           />
           {/* Badge */}
-          {tags && (
+          {/* {tags && (
             <span className="absolute top-3 left-3 bg-red-500 text-white text-xs px-2 py-1 rounded-md">
               {tags}
             </span>
-          )}
+          )} */}
         </div>
       </Link>
 

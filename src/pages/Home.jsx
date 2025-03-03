@@ -21,11 +21,18 @@ const Home = () => {
   // Reverse danh sách sản phẩm để lấy sản phẩm mới nhất
   const totalProducts = useMemo(() => [...totalProduct].reverse(), [totalProduct]);
 
+  console.log("totalProducts: ", totalProducts)
+
   // Lọc sản phẩm có tag "Special"
   const specialProducts = useMemo(
-    () => totalProducts.filter((product) => product.tags === "Special"),
+    () => totalProducts.filter((product) => product.category === "Bánh"),
     [totalProducts]
   );
+
+  const bagProducts = useMemo(
+    () => totalProducts.filter((product) => product.category === "Giỏ "),
+    [totalProducts]
+  )
 
   return (
     <>
@@ -68,7 +75,16 @@ const Home = () => {
       <div className="container mx-auto py-10">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Dành riêng cho bạn</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {specialProducts.slice(0, 4).map((product, index) => (
+          {specialProducts.slice(4, 8).map((product, index) => (
+            <FeaturedProduct key={index} product={product} />
+          ))}
+        </div>
+      </div>
+
+      <div className="container mx-auto py-10">
+        <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Dành riêng cho bạn</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {bagProducts.slice(0, 4).map((product, index) => (
             <FeaturedProduct key={index} product={product} />
           ))}
         </div>

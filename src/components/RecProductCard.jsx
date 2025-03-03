@@ -30,7 +30,7 @@ const RecProductCard = ({ product }) => {
 								/>
 							))}
 						</Link>
-						<span className='product-discount-label'>{tags}</span>
+						{/* <span className='product-discount-label'>{tags}</span> */}
 						<ul className='product-links'>
 							<li>
 								<Link

@@ -5,14 +5,12 @@ import { FaRegHeart } from "react-icons/fa";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { FaRegUser } from "react-icons/fa";
 import { IoMenu } from "react-icons/io5";
-import { IoIosArrowDown } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategory } from "../features/category/categorySlice";
 import { getCart, getWishlistItems } from "../features/auth/userSlice";
 import { BiSupport } from "react-icons/bi";
 import drLogo from "/public/logovip.png";
 import Drawer from "react-modern-drawer";
-import { motion } from "framer-motion";
 import "react-modern-drawer/dist/index.css";
 
 const Header = () => {
@@ -84,7 +82,7 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="container mx-auto flex justify-between items-center py-4">
+        <div className="container mx-auto flex justify-between items-center py-4 md:pl-16 md:pr-16">
           <div className="flex items-center">
             <Link to={"/"}>
               <img src={drLogo} className="w-20" alt="Sugar Cake" />
@@ -145,7 +143,7 @@ const Header = () => {
         <div className="bg-rose-300">
           <div className="container mx-auto flex justify-between  items-center py-2">
             <div className="flex items-center md:pl-5 md:pr-5">
-              <button onClick={toggleDrawer} className="text-white">
+              <button onClick={toggleDrawer} className="text-white ml-5">
                 <IoMenu size={25} />
               </button>
               {/* <div className="relative">
@@ -181,10 +179,10 @@ const Header = () => {
             <Link
               target="_blank"
               to={"https://www.facebook.com/profile.php?id=61572595452554"}
-              className="flex items-center text-white hover:underline"
+              className="flex items-center text-white hover:underline mr-10"
             >
               <BiSupport size={22} />
-              <span className="ml-1 font-bold">Hỗ trợ chat</span>
+              <span className="ml-2 font-bold">Hỗ trợ chat</span>
             </Link>
           </div>
         </div>
