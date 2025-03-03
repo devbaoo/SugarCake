@@ -32,7 +32,7 @@ const Shop = () => {
         </div>
 
         {/* Sản phẩm bánh */}
-        <div className="text-2xl font-bold text-rose-500 mb-6">Sản phẩm bánh</div>
+        <div className="text-2xl font-bold text-rose-500 mb-6">Bánh ngọt</div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {cakeProducts.map((product, index) => (
             <FeaturedProduct key={index} product={product} />
@@ -40,7 +40,7 @@ const Shop = () => {
         </div>
 
         {/* Sản phẩm giỏ */}
-        <div className="text-2xl font-bold text-rose-500 mt-20 mb-6">Sản phẩm giỏ</div>
+        <div className="text-2xl font-bold text-rose-500 mt-20 mb-6">Box - Giỏ bánh</div>
         <div className="grid sm:pl-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
           {bagProducts.map((product, index) => (
             <FeaturedProduct key={index} product={product} />
