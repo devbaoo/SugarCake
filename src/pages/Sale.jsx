@@ -39,7 +39,8 @@ const Sale = () => {
 				<div className="container shop-section">
 
 					{/* Carousel tự động chạy */}
-					<div className="relative w-full min-h-[400px] overflow-hidden rounded-lg shadow-lg">
+					<div className="relative w-full sm:min-h-[180px] min-h-[200px] md:min-h-[400px] overflow-hidden rounded-lg shadow-lg">
+
 						{saleBanners.map((banner, index) => (
 							<motion.div
 								key={index}
@@ -50,7 +51,9 @@ const Sale = () => {
 								className={`absolute inset-0 transition-opacity duration-500 ${index === currentIndex ? "opacity-100" : "opacity-0"
 									}`}
 							>
-								<img src={banner.image} alt="Banner" className="w-full h-full object-fill" />
+								<img src={banner.image} alt="Banner" className="w-full h-full max-h-[200px] sm:max-h-[180px] md:max-h-[400px] object-cover" />
+
+
 
 
 							</motion.div>
