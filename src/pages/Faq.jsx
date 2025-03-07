@@ -79,14 +79,9 @@ const Faq = () => {
                 <br />
                 <strong>Về thời gian nhận hàng:</strong>
                 <br />
-                • Vì là loại bánh tươi, sử dụng ngay, để đảm bảo độ tươi ngon và
-                giữ được hương vị, Sugar Silk sẽ thực hiện quy trình làm bánh
-                vào mỗi T7 hàng tuần và sẽ hoàn thành đơn hàng vào Thứ 7, Chủ
-                Nhật, Thứ 2 hàng tuần. Vì vậy, trong thời gian này, mong quý
-                khách hàng sẽ thông cảm và ủng hộ Sugar Silk. Đồng thời, Sugar
-                Silk cũng sẽ cố gắng hoàn thiện hơn để phát triển và nâng cấp hệ
-                thống làm việc để có thể đáp ứng nhu cầu nhận đơn hàng trong
-                thời gian sớm nhất dành cho quý khách hàng.
+                • Chúng tôi cam kết giao hàng trong 3-4 giờ sau khi đặt.
+                Lựa chọn thời gian nhận bánh dễ dàng với hai khung giờ:
+                9-11 giờ sáng hoặc 15-17 giờ chiều.
                 <br />
                 <br />
                 <strong>b. Phí vận chuyển:</strong>

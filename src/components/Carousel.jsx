@@ -4,22 +4,16 @@ import { motion } from "framer-motion";
 
 const slidesData = [
 	{
-		title: "Khuyến mãi Thứ Sáu",
-		subtitle: "Mua sắm ngay và nhận ngay 30% GIẢM GIÁ",
 		buttonText: "Mua ngay",
-		image: "/images/quality_restoration_20250228134956108.jpg",
+		image: "/images/ef43bc39c82a7974203b.jpg",
 	},
 	{
-		title: "Ưu đãi Ngày Lễ",
-		subtitle: "Nhấn vào bên dưới để nhận ưu đãi đặc biệt",
 		buttonText: "Xem ngay",
-		image: "/images/SUGAR_SILK_CAKE.jpg",
+		image: "/images/Screenshot 2025-03-07 174532.png",
 	},
 	{
-		title: "Giảm giá Cuối Tuần",
-		subtitle: "Nhận thêm 20% giảm giá vào mỗi cuối tuần",
 		buttonText: "Mua ngay",
-		image: "/images/quality_restoration_20250228134747251.jpg",
+		image: "/images/Screenshot 2025-03-07 174518.png",
 	},
 ];
 
@@ -51,7 +45,7 @@ const Carousel = () => {
 	};
 
 	return (
-		<div className="relative w-full h-[600px] overflow-hidden shadow-lg">
+		<div className="relative w-full h-[50px] md:h-[550px] overflow-hidden shadow-lg">
 			{slidesData.map((slide, index) => (
 				<motion.div
 					key={index}
@@ -65,8 +59,10 @@ const Carousel = () => {
 					<img
 						src={slide.image}
 						alt={`Slide ${index + 1}`}
-						className="w-full h-full object-cover"
+						className="absolute inset-0 w-full h-full object-fill"
 					/>
+
+
 					<div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-white p-6 text-center">
 						<h3 className="text-5xl font-bold mb-4 drop-shadow-lg">{slide.title}</h3>
 						<p className="text-xl mb-6 drop-shadow-md">{slide.subtitle}</p>
