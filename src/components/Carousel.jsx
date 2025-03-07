@@ -45,7 +45,7 @@ const Carousel = () => {
 	};
 
 	return (
-		<div className="relative w-full h-[50px] md:h-[550px] overflow-hidden shadow-lg">
+		<div className="relative w-full h-[600px] overflow-hidden shadow-lg">
 			{slidesData.map((slide, index) => (
 				<motion.div
 					key={index}
@@ -59,7 +59,7 @@ const Carousel = () => {
 					<img
 						src={slide.image}
 						alt={`Slide ${index + 1}`}
-						className="absolute inset-0 w-full h-full object-fill"
+						className="w-full h-full object-cover"
 					/>
 
 
