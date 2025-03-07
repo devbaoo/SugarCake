@@ -5,15 +5,15 @@ import { motion } from "framer-motion";
 const slidesData = [
 	{
 		buttonText: "Mua ngay",
-		image: "/images/ef43bc39c82a7974203b.jpg",
+		image: "/images/SUGAR_SILK_CAKE.jpg",
 	},
 	{
 		buttonText: "Xem ngay",
-		image: "/images/Screenshot 2025-03-07 174532.png",
+		image: "/images/quality_restoration_20250228134956108.jpg",
 	},
 	{
 		buttonText: "Mua ngay",
-		image: "/images/Screenshot 2025-03-07 174518.png",
+		image: "/images/quality_restoration_20250228134747251.jpg",
 	},
 ];
 

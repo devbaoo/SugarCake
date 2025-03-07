@@ -226,6 +226,15 @@ const SingleProduct = () => {
               <p>
                 Giao hàng trong 3-4 giờ làm việc <br />
               </p>
+              <p>
+                Khung giờ giao bánh: <br />
+              </p>
+              <p>
+                Sáng 9 - 11 giờ <br />
+              </p>
+              <p>
+                Chiều 15 - 17 giờ <br />
+              </p>
             </div>
           </div>
         </div>
