@@ -224,8 +224,7 @@ const SingleProduct = () => {
             <div className="mt-4">
               <h4 className="font-semibold">Vận chuyển & Đổi trả</h4>
               <p>
-                Miễn phí vận chuyển và đổi trả cho tất cả các đơn hàng. <br />
-                Chúng tôi giao hàng trong vòng <b>5-10 ngày làm việc</b>
+                Giao hàng trong 3-4 giờ làm việc <br />
               </p>
             </div>
           </div>

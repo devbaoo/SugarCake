@@ -40,7 +40,7 @@ const FlashDeals = () => {
 	const totalProducts = [...totalProduct].reverse();
 
 	const cakeProducts = useMemo(
-		() => totalProducts.filter((product) => product.category === "Bánh"),
+		() => totalProducts.filter((product) => product.category === "Bánh_ngon"),
 		[totalProducts]
 	)
 
@@ -51,11 +51,10 @@ const FlashDeals = () => {
 				<div className="flex items-center justify-between mb-8">
 					<div className="flex items-center gap-3">
 						<ImPower className="text-red-500 text-3xl animate-pulse" />
-						<h2 className="text-3xl font-bold text-gray-800">Flash Deals</h2>
 					</div>
 					{/* Countdown Timer */}
 					<div className="bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-md">
-						TOP sản phẩm bán hết nhanh nhất
+						Best Seller
 					</div>
 				</div>
 
