@@ -55,15 +55,15 @@ const Home = () => {
         <div className="mini-banner-section">
           <div className="mini-banners container">
             <img
-              src="/images/att.HpUscksgfa7SU8wUfAe-sP6KlWRjN7DQmh8svjUpUoI.jpg"
+              src="/images/47c299a8-9fe1-47de-b737-ca30ce1d6205.jpg"
               alt="Banner sản phẩm"
             />
             <img
-              src="/images/att.DFLIiRjsDbYP5XPBvUgn8HxbCxhL6dcuKxdPbc3jaI4.jpg"
+              src="/images/726eacdd-2cee-4a4a-ae3a-1d00787a88c8.jpg"
               alt="Banner sản phẩm"
             />
             <img
-              src="/images/att.Uws6zXJ7MlrF4eAHMwXPeGYuK42RVtK2Ouv2aRgBJnk.jpg"
+              src="/images/2ea7d145-3988-4817-a7bc-389ca8d0b99c.jpg"
               alt="Banner sản phẩm"
             />
           </div>
