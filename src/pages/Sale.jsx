@@ -36,37 +36,39 @@ const Sale = () => {
     <>
       <MetaTitle title={"Live Sale is Here"} />
       <div className="sale-container">
-        <div className="container shop-section">
-          {/* Carousel tự động chạy */}
-          <div className="relative w-full h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden rounded-lg shadow-lg">
-            {saleBanners.map((banner, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: index === currentIndex ? 1 : 0, x: 0 }}
-                exit={{ opacity: 0, x: -50 }}
-                transition={{ duration: 0.5 }}
-                className={`absolute inset-0 transition-opacity duration-500 ${
-                  index === currentIndex ? "opacity-100" : "opacity-0"
-                }`}
-              >
-                <img
-                  src={banner.image}
-                  alt="Banner"
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-            ))}
-          </div>
+  <div className="container shop-section">
+    {/* Carousel tự động chạy */}
+    <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden rounded-lg shadow-lg">
+      {saleBanners.map((banner, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: index === currentIndex ? 1 : 0, x: 0 }}
+          exit={{ opacity: 0, x: -50 }}
+          transition={{ duration: 0.5 }}
+          className={`absolute inset-0 transition-opacity duration-500 ${
+            index === currentIndex ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <img
+            src={banner.image}
+            alt="Banner"
+            className="w-full h-full object-contain"  // Chỉnh thành object-contain
+          />
+        </motion.div>
+      ))}
+    </div>
 
-          {/* Danh sách sản phẩm giảm giá */}
-          <div className="sale-page-products mt-8">
-            {saleProducts.map((product, index) => (
-              <FeaturedProduct key={index} product={product} />
-            ))}
-          </div>
-        </div>
-      </div>
+    {/* Danh sách sản phẩm giảm giá */}
+    <div className="sale-page-products mt-8">
+      {saleProducts.map((product, index) => (
+        <FeaturedProduct key={index} product={product} />
+      ))}
+    </div>
+  </div>
+</div>
+
+
     </>
   );
 };
