@@ -36,7 +36,7 @@ const Sale = () => {
     <>
       <MetaTitle title={"Live Sale is Here"} />
       <div className="sale-container">
-  <div className="container shop-section">
+  <div className="container shop-section px-0">  {/* Thêm px-0 để loại bỏ padding bên ngoài */}
     {/* Carousel tự động chạy */}
     <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden rounded-lg shadow-lg">
       {saleBanners.map((banner, index) => (
@@ -53,7 +53,7 @@ const Sale = () => {
           <img
             src={banner.image}
             alt="Banner"
-            className="w-full h-full object-contain"  // Chỉnh thành object-contain
+            className="w-full h-full object-cover"  // Sử dụng object-cover để lấp đầy không gian
           />
         </motion.div>
       ))}
@@ -67,6 +67,7 @@ const Sale = () => {
     </div>
   </div>
 </div>
+
 
 
     </>
