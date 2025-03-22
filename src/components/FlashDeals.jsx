@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from "react";
+import  { useEffect, useState, useMemo } from "react";
 import { ImPower } from "react-icons/im";
 import ProductCard from "./ProductCard";
 import { useDispatch, useSelector } from "react-redux";
@@ -40,7 +40,7 @@ const FlashDeals = () => {
 	const totalProducts = [...totalProduct].reverse();
 
 	const cakeProducts = useMemo(
-		() => totalProducts.filter((product) => product.category === "Bánh_ngon"),
+		() => totalProducts.filter((product) => product.category === "Bánh"),
 		[totalProducts]
 	)
 
@@ -49,9 +49,9 @@ const FlashDeals = () => {
 			<div className="max-w-7xl mx-auto px-6 lg:px-8">
 				{/* Header Section */}
 				<div className="flex items-center justify-between mb-8">
-					<div className="flex items-center gap-3">
+					{/* <div className="flex items-center gap-3">
 						<ImPower className="text-red-500 text-3xl animate-pulse" />
-					</div>
+					</div> */}
 					{/* Countdown Timer */}
 					<div className="bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-md">
 						Best Seller
