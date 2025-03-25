@@ -27,6 +27,8 @@ import ResetPassword from "./pages/ResetPassword";
 import VerifyMail from "./pages/VerifyMail";
 import PaymentSuccess from "./pages/paymentSuccess";
 import PaymentCancel from "./pages/paymentCancel";
+import Blog from "./pages/BlogPage";
+import BlogDetail from "./pages/BlogDetail";
 
 const AppRoutes = () => {
   return (
@@ -38,6 +40,8 @@ const AppRoutes = () => {
             <Route path="/shop" element={<Shop />} />
             <Route path="/product/:id" element={<SingleProduct />} />
             <Route path="/sale" element={<Sale />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:blogId" element={<BlogDetail />} />
             <Route
               path="/cart"
               element={

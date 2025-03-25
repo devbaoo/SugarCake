@@ -173,6 +173,7 @@ const Header = () => {
               <NavLink to={"/"} className=" font-bold ">Trang chủ</NavLink>
               <NavLink to={"/shop"} className=" font-bold">Cửa hàng</NavLink>
               <NavLink to={"/sale"} className=" font-bold">Khuyến mãi</NavLink>
+              <NavLink to={"/blog"} className=" font-bold">Tin Tức</NavLink>
               <NavLink to={"/contact"} className=" font-bold">Liên hệ</NavLink>
               <NavLink to={"/about"} className=" font-bold">Giới thiệu</NavLink>
             </div>
